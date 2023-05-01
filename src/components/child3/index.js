@@ -1,15 +1,22 @@
 import React, { useContext, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 
 import { data1, data2 } from "../../App";
 
 const Child3 = () => {
-const fullAddress=useContext(data2)
-const data=useContext(data1)
+// const fullAddress=useContext(data2)
+// const data=useContext(data1)
+const location=useLocation();
+const params=useParams();
+
+console.log(location)
+console.log(params);
 
   return (
     <>
-    {fullAddress}
-    {data?.name}{data?.age}
+    i am child 3
+    {/* {fullAddress}
+    {data?.name}{data?.age} */}
       {/* <data1.Consumer>
         {(value) => {
           return (

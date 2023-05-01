@@ -8,7 +8,7 @@ const Child2 = ({name,age}) => {
   return (
     <>
      
-     
+     I AM CHILD 2
     </>
   );
 };

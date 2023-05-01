@@ -9,6 +9,8 @@ import LearnUseeffect from './components/useEffect';
 import Child2 from './components/child2';
 import LoginForm from './components/loginForm';
 import BasicForm from './components/loginForm/formik';
+import { BrowserRouter, Route ,Routes} from 'react-router-dom';
+import Child3 from './components/child3';
 
 const data1=createContext();
 const data2=createContext();
@@ -50,7 +52,13 @@ function App() {
       {/* <LearnUseeffect/> */}
 
       {/* <LoginForm/> */}
-<BasicForm/>      
+
+      <Routes>
+      <Route path='/home' element={<BasicForm/>  }></Route>
+      <Route path='/child' element={<Child1/>  }></Route>
+      <Route path='/child/:id' element={<Child3/>}/>
+      </Routes>
+     
     </div>
   );
 }

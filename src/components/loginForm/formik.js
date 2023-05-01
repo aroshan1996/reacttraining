@@ -1,8 +1,11 @@
 import React from "react";
 
 import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 const BasicForm = () => {
+    const navigate = useNavigate();
+
     return (
         <>
             <Formik
@@ -20,6 +23,7 @@ const BasicForm = () => {
                 //    }}
                 onSubmit={(values) => {
                     console.log(values);
+                    navigate('/child',{state:{id:"hello"}});
                 }}
             >
                 {({
@@ -60,6 +64,7 @@ const BasicForm = () => {
                     </form>
                 )}
             </Formik>
+            
         </>
     );
 };
