@@ -9,8 +9,11 @@ import LearnUseeffect from './components/useEffect';
 import Child2 from './components/child2';
 import LoginForm from './components/loginForm';
 import BasicForm from './components/loginForm/formik';
-import { BrowserRouter, Route ,Routes} from 'react-router-dom';
+import { BrowserRouter, Link, Route ,Routes} from 'react-router-dom';
 import Child3 from './components/child3';
+import PublicRoutes from './components/publicRoutes';
+import ProtectedERoutes from './components/protctedRoutes';
+import Services from './components/services';
 
 const data1=createContext();
 const data2=createContext();
@@ -28,9 +31,9 @@ function App() {
   // },[obj])
 
   
-   setTimeout(()=>{
-    setObj({name:"Ajay"})
-    },5000)
+  //  setTimeout(()=>{
+  //   setObj({name:"Ajay"})
+  //   },5000)
 
   const address="123,park street, California"
 
@@ -52,13 +55,15 @@ function App() {
       {/* <LearnUseeffect/> */}
 
       {/* <LoginForm/> */}
+      <Link to='/signup'>Signup</Link>
+      <Link to='/child'>Home</Link>
 
       <Routes>
-      <Route path='/home' element={<BasicForm/>  }></Route>
-      <Route path='/child' element={<Child1/>  }></Route>
-      <Route path='/child/:id' element={<Child3/>}/>
+      <Route path='/signup' element={<PublicRoutes><BasicForm/></PublicRoutes>   }></Route>
+      <Route path='/child' element={<ProtectedERoutes><Child1/></ProtectedERoutes>  }></Route>
+      {/* <Route path='/child/:id' element={<Child3/>}/> */}
       </Routes>
-     
+     <Services/>
     </div>
   );
 }

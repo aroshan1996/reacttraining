@@ -23,7 +23,8 @@ const BasicForm = () => {
                 //    }}
                 onSubmit={(values) => {
                     console.log(values);
-                    navigate('/child',{state:{id:"hello"}});
+                    localStorage.setItem('token',"SAFafsASFafsAF")
+                    // navigate('/child',{state:{id:"hello"}});
                 }}
             >
                 {({

@@ -24,7 +24,6 @@ import React, { useState } from "react";
 // export {FirstComoponent,SecondComoponent}
 
 const ThirdComoponent = () => {
-    
     return(
        <>
        <FourthComoponent name="Alexa" age={12} />

@@ -24,6 +24,7 @@ const Child1 = ({name,age}) => {
     <div>
       {toggle && <Child2/>}
     </div> */}
+    <button onClick={()=>localStorage.removeItem('token')}>Logout</button>
     </>
   );
 };
