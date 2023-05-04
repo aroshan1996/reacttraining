@@ -10,6 +10,7 @@ const Menu = () => {
           <li onClick={() => navigate("/")}>Home</li>
           <li onClick={() => navigate("/about-us")}>About us</li>
           <li onClick={() => navigate("/contact-us")}>Contact us</li>
+          <li onClick={() => navigate("/sign-up")}>Sign up</li>
         </ul>
       </div>
     </>

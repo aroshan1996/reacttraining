@@ -17,6 +17,10 @@ import Home from "./components/home";
 import AboutUs from "./components/aboutUs";
 import ContactUs from "./components/contactUs";
 
+import PublicRoutes from "./components/publicRoutes";
+import ProtectedRoutes from "./components/protectedRoutes";
+import Profile from "./components/profile";
+
 const data1 = createContext();
 const data2 = createContext();
 
@@ -61,7 +65,23 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about-us" element={<AboutUs />}></Route>
-          <Route path="/contact-us" element={<ContactUs />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route
+            path="/sign-up"
+            element={
+              <PublicRoutes>
+                <BasicForm />
+              </PublicRoutes>
+            }
+          ></Route>
+          <Route
+            path="/contact-us"
+            element={
+              <ProtectedRoutes>
+                <ContactUs />
+              </ProtectedRoutes>
+            }
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>
